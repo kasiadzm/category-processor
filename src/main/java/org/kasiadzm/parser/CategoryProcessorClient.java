@@ -44,7 +44,7 @@ public class CategoryProcessorClient {
 		CategoryProcessor processor = new BasicCategoryProcessor(dataSource);
 
 		for (String categoryName : categories) {
-			Class<? extends Category> categoryClass = registeredCategories.get(categoryName);
+			Class<? extends Category> categoryClass = registeredCategories.get(categoryName.toUpperCase());
 			if (categoryClass != null) {
 				try {
 					Category category = categoryClass.getConstructor(String.class).newInstance(categoryName);

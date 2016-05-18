@@ -4,7 +4,7 @@ three
 two
 one
 three
-ANIMALS
+Animals
 sheep
 horse
 cow
@@ -12,12 +12,12 @@ horse
 NUMBERS
 seven
 ANIMALS
-NUMBERS
+numbers
 six
 six
 ANIMALS
 moose
-CARS
+cars
 AUDI
 BMW
 Audi

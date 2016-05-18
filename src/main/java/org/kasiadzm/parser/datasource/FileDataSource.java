@@ -40,7 +40,7 @@ public class FileDataSource implements DataSource {
 	 * lang.String)
 	 */
 	public List<String> getElementsByCategory(String categoryName) {
-		List<String> elements = categoryMap.get(categoryName);
+		List<String> elements = categoryMap.get(categoryName.toLowerCase());
 		if (elements == null) {
 			elements = Collections.<String> emptyList();
 		}
@@ -57,7 +57,7 @@ public class FileDataSource implements DataSource {
 	 */
 	private void parseFileToCategories(String pathToFile, List<String> categories) {
 		for (String category : categories) {
-			categoryMap.put(category, new ArrayList<String>());
+			categoryMap.put(category.toLowerCase(), new ArrayList<String>());
 		}
 
 		FileInputStream fis = null;
@@ -96,8 +96,8 @@ public class FileDataSource implements DataSource {
 			strLine = scanner.nextLine().trim();
 
 			if (isValidElement(strLine) && !containSpecialCharacter(strLine)) {
-				if (categoryMap.containsKey(strLine)) {
-					currentCategory = categoryMap.get(strLine);
+				if (categoryMap.containsKey(strLine.toLowerCase())) {
+					currentCategory = categoryMap.get(strLine.toLowerCase());
 				} else {
 					currentCategory.add(strLine);
 				}
